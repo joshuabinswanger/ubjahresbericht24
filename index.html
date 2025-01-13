@@ -1,215 +1,36 @@
-<!DOCTYPE html>
 <html>
-    <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@latest/rive.js"></script>
+   
     <head>
         <title>UB Zurich Jahresbericht 23</title>
         <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
-        
+        <link rel="stylesheet" href="./src/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >    
     </head>
     <body >
-        <div class="flex_center">
-            <div id="mobile-warning">Bitte öffnet diese Website mit einem Desktop-Browser. Die Applikation ist nicht für mobile Geräte optimiert!</div>
-        </div>
-        
+         <!-- Für Loader -->
+         <div class="lds-ellipsis" id="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 
-        <!-- Für Loader -->
-        <div class="lds-ellipsis" id="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        
-        <!-- Inhalt -->
+        <!-- Main -->
         <main>
-            <div>
+            <div id="canvas-container">
                 <canvas id="canvas"></canvas>
             </div>
-           
-            <!-- Vimeo Popup -->
-            <div id="Coffee" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("Coffee"); videoStopper("Coffee");'>close</span>
-                </div>  
-                <div class='video-container'>
-                <iframe id="kmsembed-0_qjv8shr6" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_qjv8shr6/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                frameborder="0" 
-                title="Veranstaltungen: Coffee Lectures" ></iframe>
-                </div>
-            </div>
-
-            <div id="Gaming" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("Gaming"); videoStopper("Gaming");'>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_px2nzj07" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_px2nzj07/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Veranstaltungen: Games"></iframe>
-                </div>
-            </div>
-
-            <div id="Einfuehrung" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("Einfuehrung"); videoStopper("Einfuehrung");'>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_b700tq3t" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_b700tq3t/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Veranstaltungen: Standortführungen"></iframe>
-                </div>
-            </div>
-
-            <div id="OpenLibrary" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("OpenLibrary"); videoStopper("OpenLibrary");'>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_18jh1an5" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_18jh1an5/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Open Library"></iframe>
-                </div>
-            </div>
-
-            <div id="Ausbildung" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("Ausbildung"); videoStopper("Ausbildung");'>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_r11s6m5e" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_r11s6m5e/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Ausbildung Lehrlinge"></iframe>
-                </div>
-            </div>
-
-            <div id="Aufraeumen" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("Aufraeumen"); videoStopper("Aufraeumen");'>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_q51v36b6" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_q51v36b6/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Aufräumen"></iframe>
-                </div>
-            </div>
-
-            <div id="OpenScience" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='hideVid("OpenScience"); videoStopper("OpenScience");'>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_nmnvifgz" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_nmnvifgz/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Open Science"></iframe>
-                </div>
-            </div>
-
-            <div id="EasterEgg" class="popup">
-                <div>
-                    <span class='material-icons'  onclick='this.parentElement.parentElement.style.visibility = "hidden";';>close</span>
-                </div>
-                <div class='video-container'>
-                <iframe id="kmsembed-0_wdq5tt2i" class="iframeVideo"
-                src="https://uzh.mediaspace.cast.switch.ch/embed/secure/iframe/entryId/0_wdq5tt2i/uiConfId/23449004/st/0" 
-                allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-                " frameborder="0" 
-                title="Out Takes"></iframe>
-                </div>
-            </div>
-
-           <div id="Ruedi" class="flex_center">
-                <div>
-                    <span class='material-icons' style="left: calc(25vw + 45px - 16px)" onclick="hideVid('Ruedi')";>close</span>
-                </div>
-                <div class = "text_box">
-                 <h1 style="margin-top: 0;">Zum Jahresbericht 2023 der UB Zürich</h1>
-                 <p>   
-                 Das Jahr 2023 stand für die UB Zürich unter dem Motto der Konsolidierung. 
-                 Im zweiten Jahr ihres Bestehens konnten wir verschiedene Vorhaben erfolgreich umsetzen und abschliessen, 
-                 andere dauern noch an und weitere müssen noch in Angriff genommen werden.    
-                 </p>
-                 <p> 
-                 Beginnen wir mit den erfolgreich umgesetzten Zielen:
-                 <ol type="i" style="list-style-type: disc; font-family: 'Source Sans Pro'; font-weight: 400;">
-                 <li>Die UB hat das Standortkonzept mit der Einführung von Open Libraries zumindest teilweise umgesetzt, arbeitet aber noch weiter an der Verfeinerung (u.a. an der flächendeckenden Ausstattung mit RFID). </li>
-                 <li>Wir haben zusammen mit der ZB ein gemeinsames Intranet («Okapi») eingeführt und nutzen es seither für unsere interne Kommunikation. </li>
-                 <li>Die IT-Migration der Standorte konnte erfolgreich abgeschlossen werden. </li>
-                 <li>Die Mediendienste und Nutzendendienste haben sich organisiert und funktionieren so weit gut – wobei die übergreifende Harmonisierung nach wie vor eine Herausforderung darstellt. </li>
-                 <li>Die UB betreibt die DSI Community Libraries (https://libraries.dsi.uzh.ch/) und nutzt diese für den Austausch mit Forschenden und als Quelle für Innovationen und Weiterentwicklung. </li>
-                 <li>Wir haben eine gemeinsame Strategie für UB und ZB 2024-2027 entwickelt.</li>
-                 <li>Weiter haben wir ein Konzept für die Printzeitschriften verfasst und zudem die Agenturdienstleistungen für Zeitschriften in einem aufwändigen Verfahren neu ausgeschrieben und vergeben. </li>
-                 <li>Schliesslich haben wir eine umfassende Evaluation der Nutzendenzufriedenheit – wiederum gemeinsam mit der ZB – durchgeführt. 
-                    Das Ergebnis zeigt, dass die Nutzenden mit den gebotenen Services grundsätzlich zufrieden sind. Wobei auch ersichtlich wurde, dass verschiedene Dienstleistungen noch zu wenig bekannt sind und dass unser Rechercheinstrument swisscovery deutlichen Verbesserungsbedarf hat.</li>
-                 </ol>
-                 </p>
-                 <h1>Alltag</h1>
-                 <p>
-                    Ja, auch der ging weiter, zum Teil unter erschwerten Bedingungen, weil noch viele Arbeiten im Nachgang der Gründung der UB 
-                    und der Zusammenführung der zahlreichen kleineren Bibliotheken zu leisten waren und weiterhin zu leisten sind, u.a. eine 
-                    umfangreiche Retrokatalogisierung. Unter den täglichen Arbeiten sind die Erwerbung und Medienbearbeitung zu nennen, 
-                    die Pflege des E-Media-Angebots, die verschiedenen Dienstleistungen für unsere Nutzer:innen wie Beratungen, Auskünfte, Schulungen,
-                    Kurier, Scans und Ausleihen. Die Zahlen sind in der noch jungen UB nicht einfach mit den Vorjahren zu vergleichen, 
-                    doch stellen auch wir einen gewissen Rückgang bei der physischen Nutzung unserer Medien und einen Zuwachs bei der Nutzung digitaler Inhalte fest. 
-                    Ungebrochen ist der Trend zur immer intensiveren Nutzung der UB als Lernraum, besonders in den Phasen der Prüfungsvorbereitungen. 
-
-                 </p>
-                 <h1>Open Science (an der UZH)</h1>
-                 <p>Innerhalb der UZH haben wir die Rolle der UB im Kontext von Open Science diskutiert und auf einen guten Weg gebracht. 
-                 Die Abteilung Open Science Services (OSS) spielt dabei die Schlüsselrolle, auch bei der Vernetzung mit nationalen Akteuren, zum Beispiel in einem neuen Netzwerk zu Open Research Data. 
-                 Innerhalb der UB konnte das OA-Netzwerk, das die entsprechend spezialisierten Liaison Librarians (LLs) unter der Regie von OSS einbezieht, etabliert werden. Die Mediendienste konnten vermehrt als ZORA-Editor:innen in die Bearbeitung der Metadaten für das Publikationsrepositorium einbezogen werden. 
-                 </p>
-                 <p>
-                 Die LLs waren zudem mit der Weiterentwicklung der Informationskompetenz (IK) in Richtung Data Literacy beschäftigt und nahmen eine Standortbestimmung vor. 
-                 Diese soll die Grundlage für die Schärfung von Profilen und die künftige Arbeitsorganisation bilden.
-                 </p>
-                 <h1>Wirtschaftspolitische Ebene</h1>
-                 <p>
-                 Auf wissenschaftspolitischer Ebene haben wirWir haben uns an nationalen Aktivitäten im Bereich Open Science beteiligt, bei Lizenzverhandlungen mit Grossverlagen mitgewirkt, Beiträge an Tagungen geleistet und uns mit zahlreichen Akteuren ausgetauscht. 
-                 Speziell zu erwähnen ist eine Partnerschaft mit den Universitätsbibliotheken Frankfurt, Berlin (Humboldt Universität) und Wien, die sich auf der Ebene der Direktionen etabliert hat. 
-                 Die UB ist in verschiedenen nationalen und internationalen Gremien engagiert: u.a. SLiNER, Konsortium der Schweizer Hochschulbibliotheken, Bibliosuisse, LIBER, LERU, SWISSUbase und diversen Gremien von SLSP.
-                 </p>
-                 <h1>Bauprojekte</h1>
-                 <p>
-                 2023 haben die UB mehrere Bauprojekte beschäftigt: Nach wie vor das grosse Bauvorhaben FORUM UZH auf dem Campus Zentrum, das planmässig vorangeht. Zudem gab es auf dem Campus Oerlikon eine positive Entwicklung, nachdem frühere Pläne nicht umgesetzt werden konnten: 
-                 Im neu von der UZH gemieteten und auszubauenden Gebäude BIM soll eine UB Sozialwissenschaften eingerichtet werden (per 2026). Zudem ergab sich die Möglichkeit, mit den zentralen Einheiten in den neu als UZH-Standort angemieteten Westpark umzuziehen (per 2025).
-                 </p>
-                 <h1>2024</h1>
-                 <p>
-                    Damit sind wir schon beim Ausblick. Vieles wird uns weiter beschäftigen, schliesslich befindet sich die UB Zürich immer noch im Aufbau. Gleichzeitig sehen wir vor allem aus der Perspektive der Geschäftsleitung weiteren Veränderungsbedarf, um Prozesse zu optimieren und Verantwortlichkeiten zu klären. 
-                    Die neue Strategie soll umgesetzt werden, wobei sie vor allem die Richtung angibt, in die sich UB und ZB entwickeln sollen. Und dann ist da noch das Thema der generativen KI, das nicht nur die Bibliothekswelt nach der Lancierung von ChatGPT durchrüttelt. Wie viele andere Organisationen muss und will die UB Zürich hier mögliche Anwendungen ermitteln und sinnvoll in die Praxis integrieren. Wir bleiben dran!
-                 </p>
-                 <p>Rudolf Mumenthaler, Direktor UB Zürich</p>
-                </div>
-            </div>
-
-
-            
         </main>
-        <script src="./src/riveControl.js"></script>
-        <script src="./src/loader.js"></script>
-        <script src="./src/canvas_resize.js"></script>
-        <script>
-            function isMobileDevice() {
-                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                return /android|iPhone|iPad|iPod|opera mini|IEMobile|WPDesktop/i.test(userAgent);
-            }
-    
-            if (isMobileDevice()) {
-                document.getElementById('mobile-warning').style.display = 'block';
-                cleanupRive();
-            }
-        </script>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@latest/rive.js"></script>
+    <script src="./src/riveControl.js"></script>
+    <script src="./src/loader.js"></script>
+    <script src="./src/canvas_resize.js"></script> 
+    <script>
+        function isMobileDevice() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            return /android|iPhone|iPad|iPod|opera mini|IEMobile|WPDesktop/i.test(userAgent);
+        }
+
+        if (isMobileDevice()) {
+            document.getElementById('mobile-warning').style.display = 'block';
+            cleanupRive();
+        }
+    </script>
 </html>

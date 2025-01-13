@@ -3,7 +3,7 @@ let r;
 function calcRiveSize() {
 
   r = new rive.Rive({
-    src: "./assets/rive/ub_jahresbericht23.riv",
+    src: "public/assets/rive/ub_jahresbericht23.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
     artboard: "UBJahresbericht23",
